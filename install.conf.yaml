@@ -3,6 +3,12 @@
 - link:
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
+    ~/.vim: vim
     ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
+    ~/.antigen: antigen
+- shell:
+    - [git submodule update --init --recursive, Updating Git Submodules...]
+    - [echo | echo | vim +PluginInstall +qall &>/dev/null, Installing VIM Plugins...]
 
 
