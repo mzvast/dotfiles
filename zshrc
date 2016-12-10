@@ -100,3 +100,9 @@ antigen theme ys
 
 # Tell antigen that you're done.
 antigen apply
+
+# pyenv
+export PATH="/home/student/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
