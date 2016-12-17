@@ -7,6 +7,7 @@
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.antigen: antigen
+    ~/.byobu: byobu
 - shell:
     - [git submodule update --init --recursive, Updating Git Submodules...]
     - [echo | echo | vim +PluginInstall +qall &>/dev/null, Installing VIM Plugins...]

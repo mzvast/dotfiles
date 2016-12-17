@@ -5,7 +5,7 @@
 - .vimrc [vundle]
 - .tmux.conf
 - .gitconfig
-
+- .byobu
 ## prerequirements
 - git 
 - tmux
