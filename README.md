@@ -8,5 +8,6 @@
 
 ## prerequirements
 - git 
-- byobu(tmux)
-
+- byobu
+- zsh
+- oh-my-zsh
