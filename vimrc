@@ -74,8 +74,4 @@ set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
 
-" vimim
-let g:vimim_mode = 'dynamic'  
-let g:vimim_mycloud = 0  
-let g:vimim_punctuation = 2  
-let g:vimim_shuangpin = 0  
+
