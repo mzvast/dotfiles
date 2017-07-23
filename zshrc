@@ -95,6 +95,8 @@ antigen bundle docker
 antigen bundle yum
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+export NVM_LAZY_LOAD=true
+antigen bundle lukechilds/zsh-nvm
 
 # Load the theme.
 antigen theme ys
