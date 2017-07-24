@@ -116,3 +116,6 @@ antigen theme ys
 
 # Tell antigen that you're done.
 antigen apply
+
+alias fecheck='git diff origin/master --name-only | xargs fecs check --level 2 --reporter=baidu --verbose'
+alias build_nm='curl -s http://hz01-sw-up07111.hz01.baidu.com:8011/public/tools/build_nm.sh | bash'
