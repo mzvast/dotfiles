@@ -84,9 +84,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 function code {
     if [[ $# = 0 ]]
@@ -110,6 +110,7 @@ antigen bundle docker
 antigen bundle yum
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle lukechilds/zsh-nvm
 
 # Load the theme.
 antigen theme ys
@@ -117,5 +118,13 @@ antigen theme ys
 # Tell antigen that you're done.
 antigen apply
 
+# Alias Section
 alias fecheck='git diff origin/master --name-only | xargs fecs check --level 2 --reporter=baidu --verbose'
+
 alias build_nm='curl -s http://hz01-sw-up07111.hz01.baidu.com:8011/public/tools/build_nm.sh | bash'
+
+function setnodepath() {
+    nodeglobelpath=`npm root -g`
+    export NODE_PATH=$nodeglobelpath
+}
+setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
