@@ -111,6 +111,7 @@ antigen bundle yum
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle lukechilds/zsh-nvm
+antigen bundle pyenv
 
 # Load the theme.
 antigen theme ys
