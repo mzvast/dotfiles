@@ -124,8 +124,16 @@ alias fecheck='git diff origin/master --name-only | xargs fecs check --level 2 -
 
 alias build_nm='curl -s http://hz01-sw-up07111.hz01.baidu.com:8011/public/tools/build_nm.sh | bash'
 
+# NODE_PATH
 function setnodepath() {
     nodeglobelpath=`npm root -g`
     export NODE_PATH=$nodeglobelpath
 }
 setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
+
+# 本地node_modules
+export PATH='./node_modules/.bin/':$PATH
+
+# gnu-tar覆盖bsd-tar
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
