@@ -137,3 +137,10 @@ export PATH='./node_modules/.bin/':$PATH
 # gnu-tar覆盖bsd-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+# Surge Shell
+export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152
+
+# Redmi Cuid
+function getcuid(){
+    echo "kWcGluxLaKTlKSnzQ0Np3SFjRxUFvxdmIhN63bDpq2QSjRWplSxnsfj8KGVurEUFpSx3piqrtcuuN25IcN2bNA=="
+}
