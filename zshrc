@@ -133,3 +133,8 @@ export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152
 function getcuid(){
     echo "kWcGluxLaKTlKSnzQ0Np3SFjRxUFvxdmIhN63bDpq2QSjRWplSxnsfj8KGVurEUFpSx3piqrtcuuN25IcN2bNA=="
 }
+
+# myip
+function ip(){
+    ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Eio '(\d|\.)+'
+}
