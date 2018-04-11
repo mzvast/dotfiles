@@ -136,5 +136,5 @@ function getcuid(){
 
 # myip
 function ip(){
-    ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Eio '(\d|\.)+'
+    ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
 }
