@@ -138,3 +138,12 @@ function getcuid(){
 function ip(){
     ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
 }
+# cloudflare dns for mac.xrocket.ml
+function upip(){
+myip=`ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'`
+curl -X PUT "https://api.cloudflare.com/client/v4/zones/dcf16276b9ff771bfe7cc71085ecf02e/dns_records/501ae78e08a7ea1c3e81e20221638e62" \
+     -H "X-Auth-Email:mzvast@gmail.com" \
+     -H "X-Auth-Key: 3a821bc66454d00eee6390910e99a28c6ee9d" \
+     -H "Content-Type: application/json" \
+     --data '{"type":"A","name":"mac.xrocket.ml","content":"'$myip'","ttl":120,"proxied":false}'
+}
