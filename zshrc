@@ -127,7 +127,7 @@ export PATH='./node_modules/.bin/':$PATH
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 # Surge Shell
-export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152
+export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153
 
 # Redmi Cuid
 function getcuid(){
@@ -147,3 +147,9 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/dcf16276b9ff771bfe7cc710
      -H "Content-Type: application/json" \
      --data '{"type":"A","name":"mac.xrocket.ml","content":"'$myip'","ttl":120,"proxied":false}'
 }
+
+# 项目目录alias
+alias vrx='cd ~/@Projects/baidu/heicha/avalon-vrx-teacher/avalon-vrx'
+alias vrxd='cd ~/@Projects/baidu/heicha/vrxd'
+alias edu='cd ~/@Projects/baidu/blueray-mobile/avalon-platform-teacher/avalon-web-platform/'
+alias car='cd ~/@Projects/baidu/vr-car/car360-pc'
