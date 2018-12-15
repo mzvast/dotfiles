@@ -108,6 +108,8 @@ antigen theme ys
 # Tell antigen that you're done.
 antigen apply
 
+# fix Language Encode
+export LC_ALL="en_US.UTF-8"
 # Alias Section
 alias fecheck='git diff origin/master --name-only | xargs fecs check --level 2 --reporter=baidu --verbose'
 
@@ -153,3 +155,7 @@ alias vrx='cd ~/@Projects/baidu/heicha/avalon-vrx-teacher/avalon-vrx'
 alias vrxd='cd ~/@Projects/baidu/heicha/vrxd'
 alias edu='cd ~/@Projects/baidu/blueray-mobile/avalon-platform-teacher/avalon-web-platform/'
 alias car='cd ~/@Projects/baidu/vr-car/car360-pc'
+
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /Users/wangyang65/.nvm/versions/node/v8.10.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/wangyang65/.nvm/versions/node/v8.10.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh

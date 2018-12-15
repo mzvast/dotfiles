@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/wangyang65/baidu'
 let g:netrw_dirhist_2='/Users/wangyang65/baidu/upd-vr'
 let g:netrw_dirhist_3='/Users/wangyang65/baidu/upd-vr/study-icode'
+let g:netrw_dirhist_4='/Users/wangyang65/@Projects/baidu'
+let g:netrw_dirhist_5='/Users/wangyang65/@Projects/my-react-app/stories'
