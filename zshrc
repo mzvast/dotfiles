@@ -123,7 +123,7 @@ function setnodepath() {
 setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
 
 # 本地node_modules
-export PATH='./node_modules/.bin/':$PATH
+# export PATH='./node_modules/.bin/':$PATH
 
 # gnu-tar覆盖bsd-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
@@ -151,11 +151,5 @@ curl -X PUT "https://api.cloudflare.com/client/v4/zones/dcf16276b9ff771bfe7cc710
 }
 
 # 项目目录alias
-alias vrx='cd ~/@Projects/baidu/heicha/avalon-vrx-teacher/avalon-vrx'
-alias vrxd='cd ~/@Projects/baidu/heicha/vrxd'
-alias edu='cd ~/@Projects/baidu/blueray-mobile/avalon-platform-teacher/avalon-web-platform/'
-alias car='cd ~/@Projects/baidu/vr-car/car360-pc'
 
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /Users/wangyang65/.nvm/versions/node/v8.10.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/wangyang65/.nvm/versions/node/v8.10.0/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.zsh
+
