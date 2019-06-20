@@ -126,12 +126,6 @@ setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 
-# Surge Shell
-#export https_proxy=http://127.0.0.1:6152;export http_proxy=http://127.0.0.1:6152;export all_proxy=socks5://127.0.0.1:6153
-
-# v2ray Shell
-export https_proxy=http://127.0.0.1:8001;export http_proxy=http://127.0.0.1:8001;export all_proxy=socks5://127.0.0.1:1081
-
 # myip
 function ip(){
     ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
