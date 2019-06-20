@@ -9,6 +9,9 @@
       force: true
       path: zshrc
     ~/.antigen: antigen
+    ~/.ideavimrc:
+      force: true
+      path: ideavimrc
 - shell:
     - [git submodule update --init --recursive, Updating Git Submodules...]
     - [echo | echo | vim +PluginInstall +qall &>/dev/null, Installing VIM Plugins...]
