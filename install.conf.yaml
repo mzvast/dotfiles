@@ -1,14 +1,18 @@
 - clean: ['~']
 
 - link:
-    ~/.vim: vim
+    ~/.vim: 
+      force: true
+      path: vim
     ~/.vimrc: 
       relink: true
       path: vimrc
     ~/.zshrc:
       force: true
       path: zshrc
-    ~/.antigen: antigen
+    ~/.antigen:
+      force: true
+      path: antigen
     ~/.ideavimrc:
       force: true
       path: ideavimrc
