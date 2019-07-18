@@ -125,6 +125,7 @@ setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后
 # gnu-tar覆盖bsd-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
 # myip
 function ip(){
