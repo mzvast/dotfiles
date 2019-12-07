@@ -99,6 +99,7 @@ antigen bundle extract
 #antigen bundle yum
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+export NVM_LAZY_LOAD=true
 antigen bundle lukechilds/zsh-nvm
 antigen bundle pyenv
 
@@ -113,11 +114,11 @@ export LC_ALL="en_US.UTF-8"
 
 
 # NODE_PATH
-function setnodepath() {
-    nodeglobelpath=`npm root -g`
-    export NODE_PATH=$nodeglobelpath
-}
-setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
+#function setnodepath() {
+#    nodeglobelpath=`npm root -g`
+#    export NODE_PATH=$nodeglobelpath
+#}
+#setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
 
 # 本地node_modules
 # export PATH='./node_modules/.bin/':$PATH
@@ -131,16 +132,4 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 function ip(){
     ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
 }
-
-# cloudflare dns for mac.xrocket.ml
-function upip(){
-myip=`ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'`
-curl -X PUT "https://api.cloudflare.com/client/v4/zones/dcf16276b9ff771bfe7cc71085ecf02e/dns_records/501ae78e08a7ea1c3e81e20221638e62" \
-     -H "X-Auth-Email:mzvast@gmail.com" \
-     -H "X-Auth-Key: 3a821bc66454d00eee6390910e99a28c6ee9d" \
-     -H "Content-Type: application/json" \
-     --data '{"type":"A","name":"mac.xrocket.ml","content":"'$myip'","ttl":120,"proxied":false}'
-}
-
-
 
