@@ -101,7 +101,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 export NVM_LAZY_LOAD=true
 antigen bundle lukechilds/zsh-nvm
-antigen bundle pyenv
+antigen bundle mattberther/zsh-pyenv
+#antigen bundle pyenv
 
 # Load the theme.
 antigen theme ys
