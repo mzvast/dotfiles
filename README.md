@@ -2,7 +2,7 @@
 
 ## main components
 - .zshrc [oh-my-zsh + antigen]
-- .vimrc [vundle]
+- .vimrc [essential]
 - .ideavimrc
 
 ## prerequirements
