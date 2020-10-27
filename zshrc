@@ -133,4 +133,7 @@ export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 function ip(){
     ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
 }
-
+# sf
+function dus(){
+    du -hs .[^.]* | sort -hr;
+}
