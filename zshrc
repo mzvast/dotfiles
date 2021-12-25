@@ -99,9 +99,7 @@ antigen bundle extract
 #antigen bundle yum
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-export NVM_LAZY_LOAD=false
-export NVM_AUTO_USE=true
-#https://github.com/lukechilds/zsh-nvm
+export NVM_LAZY_LOAD=true
 antigen bundle lukechilds/zsh-nvm
 antigen bundle mattberther/zsh-pyenv
 #antigen bundle pyenv
@@ -144,6 +142,3 @@ jdk() {
         export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
         java -version
  }
-function nrm:bd(){
-	npm config set registry http://registry.npm.baidu-int.com
-}
