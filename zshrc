@@ -142,3 +142,6 @@ jdk() {
         export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
         java -version
  }
+function nrm:bd(){
+	npm config set registry http://registry.npm.baidu-int.com
+}
