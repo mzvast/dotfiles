@@ -16,6 +16,10 @@ ZSH_THEME="robbyrussell"
 # sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
+# 让复制的时候不要有打字机效果
+# https://github.com/ohmyzsh/ohmyzsh/issues/6338
+DISABLE_MAGIC_FUNCTIONS=true
+
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
