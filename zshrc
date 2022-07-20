@@ -133,6 +133,9 @@ export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
 
+# USD
+export PYTHONPATH=$HOME/USDinst/lib/python:$PYTHONPATH
+export PATH=$HOME/USDinst/bin:$PATH
 # myip
 function ip(){
     ifconfig|grep 'inet '|grep -v '127.0'|grep -Eio 'inet.*netmask'|grep -Pio '(\d|\.)+'
