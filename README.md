@@ -9,3 +9,4 @@
 - git 
 - zsh
 - oh-my-zsh
+- python 3.9
