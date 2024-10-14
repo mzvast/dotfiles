@@ -127,6 +127,8 @@ export LC_ALL="en_US.UTF-8"
 
 # 本地node_modules
 # export PATH='./node_modules/.bin/':$PATH
+# Apple 芯片的
+export PATH="/opt/homebrew/bin:$PATH"
 
 # gnu-tar覆盖bsd-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
