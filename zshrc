@@ -2,6 +2,9 @@
 DISABLE_AUTO_UPDATE="true"
 DISABLE_UPDATE_PROMPT="true"
 
+# Apple 芯片的
+export PATH="/opt/homebrew/bin:$PATH"
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -104,7 +107,17 @@ if [[ ! -f ~/.zinit/bin/zinit.zsh ]]; then
 fi
 source ~/.zinit/bin/zinit.zsh
 
+zinit snippet https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/extract/extract.plugin.zsh
+
 # ========== 插件 ==========
+# zinit light "dominik-schwabe/zsh-fnm"
+# fnm 安装及初始化
+# zinit ice atload"[[ ! -x $HOME/.fnm ]] && curl -fsSL https://fnm.vercel.app/install | bash"
+zinit light "dominik-schwabe/zsh-fnm"
+# 激活 fnm
+# export PATH="$HOME/.fnm:$PATH"
+# eval "$(fnm env)"
+
 # zsh-syntax-highlighting：放最后加载，保证正常工作
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
@@ -130,8 +143,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 # eval "$(fnm env --use-on-cd)"
 
 # 如果要用 nvm，可以懒加载
-zinit ice wait lucid atload'nvm use default >/dev/null'
-zinit light lukechilds/zsh-nvm
+# zinit ice wait lucid atload'nvm use default >/dev/null'
+# zinit light lukechilds/zsh-nvm
 
 
 # fix Language Encode
@@ -140,8 +153,6 @@ export LC_ALL="en_US.UTF-8"
 
 # 本地node_modules
 # export PATH='./node_modules/.bin/':$PATH
-# Apple 芯片的
-export PATH="/opt/homebrew/bin:$PATH"
 
 # gnu-tar覆盖bsd-tar
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
@@ -183,3 +194,9 @@ export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
 
 # zprof
+
+# fnm
+FNM_PATH="/opt/homebrew/opt/fnm/bin"
+if [ -d "$FNM_PATH" ]; then
+  eval "`fnm env`"
+fi
