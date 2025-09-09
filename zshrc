@@ -1,3 +1,8 @@
+# zmodload zsh/zprof
+DISABLE_AUTO_UPDATE="true"
+DISABLE_UPDATE_PROMPT="true"
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -92,38 +97,46 @@ source $ZSH/oh-my-zsh.sh
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.antigen/antigen.zsh
-# Load the oh-my-zsh's library.
-#antigen use oh-my-zsh
+# 初始化 zinit
+if [[ ! -f ~/.zinit/bin/zinit.zsh ]]; then
+  mkdir -p ~/.zinit
+  git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
+fi
+source ~/.zinit/bin/zinit.zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle z
-antigen bundle extract
-#antigen bundle docker
-#antigen bundle yum
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-export NVM_LAZY_LOAD=true
-antigen bundle lukechilds/zsh-nvm
-antigen bundle mattberther/zsh-pyenv
-#antigen bundle pyenv
+# ========== 插件 ==========
+# zsh-syntax-highlighting：放最后加载，保证正常工作
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme ys
+# 如果以后需要 pyenv / docker / nvm，直接用：
+# zinit light lukechilds/zsh-nvm
+# zinit light mattberther/zsh-pyenv
 
-# Tell antigen that you're done.
-antigen apply
+# ========== 主题 ==========
+# 直接用 oh-my-zsh 的 ys 主题
+zinit snippet OMZ::themes/ys.zsh-theme
+
+# ========== 加速 ==========
+# 补全系统异步编译，减少 compinit 的延迟
+autoload -Uz compinit
+zstyle ':completion:*' rehash true
+zinit ice wait lucid
+zinit light zdharma-continuum/fast-syntax-highlighting
+
+# ========== NVM/FNM ==========
+# 如果你决定用 fnm，直接加到 PATH，完全不用插件
+# export PATH="$HOME/.fnm:$PATH"
+# eval "$(fnm env --use-on-cd)"
+
+# 如果要用 nvm，可以懒加载
+zinit ice wait lucid atload'nvm use default >/dev/null'
+zinit light lukechilds/zsh-nvm
+
 
 # fix Language Encode
 export LC_ALL="en_US.UTF-8"
 
-
-# NODE_PATH
-#function setnodepath() {
-#    nodeglobelpath=`npm root -g`
-#    export NODE_PATH=$nodeglobelpath
-#}
-#setnodepath  # 使用 nvm 的用户， 请确保这个命令是在`nvm.sh`之后执行。
 
 # 本地node_modules
 # export PATH='./node_modules/.bin/':$PATH
@@ -151,6 +164,22 @@ jdk() {
         export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
         java -version
  }
-function nrm:bd(){
-	npm config set registry http://registry.npm.baidu-int.com
-}
+
+export PATH=$HOME/.local/bin:$PATH
+# git
+#export PATH="/opt/homebrew/bin:$PATH"
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+
+# pnpm
+export PNPM_HOME="/Users/bytedance/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
+
+# zprof

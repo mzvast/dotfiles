@@ -10,9 +10,6 @@
     ~/.zshrc:
       force: true
       path: zshrc
-    ~/.antigen:
-      force: true
-      path: antigen
     ~/.ideavimrc:
       force: true
       path: ideavimrc
